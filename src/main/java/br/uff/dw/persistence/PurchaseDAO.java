@@ -19,4 +19,5 @@ public interface PurchaseDAO extends CrudRepository<Purchase,Long>{
 
     public List<Purchase> findByEvent(Event e);
     public List<Purchase> findByUser(User e);
+    public Purchase findByUserAndEvent(User e,Event ev);
 }

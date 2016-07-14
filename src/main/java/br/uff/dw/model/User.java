@@ -25,6 +25,15 @@ public class User implements Serializable {
     private String cpf;
     private String email;
 
+    public User() {
+    }
+
+    public User(String nome, String cpf, String email) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+    }
+    
     public Long getID() {
         return ID;
     }

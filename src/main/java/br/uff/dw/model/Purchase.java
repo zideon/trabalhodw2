@@ -10,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 /**
  *
@@ -22,12 +21,22 @@ public class Purchase implements Serializable {
     @GeneratedValue
     private Long ID;
     
+    int amount;
     @ManyToOne
     private User user;
     
     @ManyToOne
     private Event event;
 
+    public Purchase() {
+    }
+
+    public Purchase(int amount, User user, Event event) {
+        this.amount = amount;
+        this.user = user;
+        this.event = event;
+    }
+    
     public Long getID() {
         return ID;
     }
@@ -42,6 +51,22 @@ public class Purchase implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
     
     
